@@ -14,52 +14,40 @@
 ActiveRecord::Schema.define(version: 6) do
 
   create_table "cities", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "listings", force: :cascade do |t|
-    t.decimal  "price",           precision: 10, scale: 2
-    t.integer  "neighborhood_id",                          null: false
-    t.integer  "host_id",                                  null: false
-    t.string   "address",                                  null: false
-    t.string   "description"
-    t.string   "listing_type",                             null: false
-    t.string   "title",                                    null: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.integer "price"
+    t.integer "neighborhood_id"
+    t.integer "host_id"
+    t.string  "address"
+    t.string  "description"
+    t.string  "listing_type"
+    t.string  "title"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
-    t.integer  "city_id",    null: false
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "city_id"
+    t.string  "name"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "checkin",    null: false
-    t.datetime "checkout",   null: false
-    t.integer  "guest_id",   null: false
-    t.integer  "listing_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "checkin"
+    t.datetime "checkout"
+    t.integer  "guest_id"
+    t.integer  "listing_id"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "guest_id",       null: false
-    t.integer  "rating",         null: false
-    t.integer  "reservation_id", null: false
-    t.string   "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer "guest_id"
+    t.integer "rating"
+    t.integer "reservation_id"
+    t.string  "description"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
 end
